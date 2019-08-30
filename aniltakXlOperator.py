@@ -41,4 +41,14 @@ class oPlan():
 
         def updateXl(self):
             wb = self.workbook
-            she
+            sheet_list = wb.sheetnames
+            er_list = self.data_list
+
+            for sheet_name in sheet_list:
+                oSheet = wb[sheet_name]
+                for rSheet in oSheet:
+                    for item in er_list:
+                        if item[0] == sheet_name:
+                            if rSheet[3].value == int(item[1]):
+                                oSheet[rSheet[6].coordinate] = item[4]
+                                er_list[item]
